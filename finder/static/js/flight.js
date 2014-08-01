@@ -10,6 +10,7 @@ $(document).ready(function(){
     var relevant_info = [];
 
     $('#give_me').on('click', function(){
+        // Could remove var airline;, var flight_num; and just declare them here since they're only used here
         airline = $('#airline').val();
         flight_num = $('#flight_num').val();
         year = $('#year').val();
@@ -23,12 +24,15 @@ $(document).ready(function(){
             success: function(data){
                 console.log(data);
                 for (i=0; i<data.flightStatuses.length; i++){
+                    // Shouldn't mix underscore (python) syntax with camelcase (javascript)
+                    // Also put spaces in between your '=' and '+' below so it's easier to read
                     display_info={};
                     display_info.arrival_airport=data.flightStatuses[i].arrivalAirportFsCode;
                     display_info.departure_airport=data.flightStatuses[i].departureAirportFsCode;
                     display_info.status=data.flightStatuses[i].status;
                     relevant_info.push(display_info);
                     if (data.flightStatuses[i].hasOwnProperty('delays')) {
+                        // Return some of these lines to multiple lines so it's easier to read
                         $('#display').append("<div><p>" + "Departure Airport: " + display_info.departure_airport + "<br>" + "Arrival Airport: " + display_info.arrival_airport + "<br>" + "Delayed Minutes: "+ data.flightStatuses[i].delays.departureGateDelayMinutes + "</p></div>");
                         $('#minutes').append("Flight is delayed for: "+ "<br>"+data.flightStatuses[i].delays.departureGateDelayMinutes+" minutes"+"<br>");
                         $('#myModal').modal('show');
