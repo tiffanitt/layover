@@ -9,6 +9,11 @@ def home(request):
     return render(request, 'index.html')
 
 
+# Careful using a variable called 'set', this is a built in python term and could cause errors
+
+# You could use 1 url that has 'margarita', 'coffee', 'lounge', etc in the url and only make 1 view
+# that pulls the Event from the database based on that category name instead of 3 hardcoded views.
+# If you added another event type, this would automatically work instead of needing to add a new view.
 def margarita(request):
     set = Event.objects.filter(category__pk=1)
     return render(request, 'margarita.html', {'set': set})
