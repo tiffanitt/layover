@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="/static/ico/favicon.png">
+
+    <title>Layover - by Tiffani</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/main.css" rel="stylesheet">
+
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="/static/js/modernizr.custom.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+  </head>
+
+  <body>
+
+	<!-- Menu -->
+	<nav class="menu" id="theMenu">
+		<div class="menu-wrap">
+			<h1 class="logo"><a href="index.html#home">Home</a></h1>
+			<i class="fa fa-arrow-right menu-close"></i>
+			<a href="{% url 'home' %}">Home</a>
+            {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}">Logout</a>
+            {% else %}
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'register' %}">Register</a>
+            <a href="#services">Curious? FAQ</a>
+            {% endif %}
+			<a href="#contact">Contact</a>
+			<a href="#"><i class="fa fa-facebook"></i></a>
+			<a href="#"><i class="fa fa-twitter"></i></a>
+			<a href="#"><i class="fa fa-dribbble"></i></a>
+			<a href="#"><i class="fa fa-envelope"></i></a>
+		</div>
+		
+		<!-- Menu button -->
+		<div id="menuToggle"><i class="fa fa-bars"></i></div>
+	</nav>
+	
+	<!-- MAIN IMAGE SECTION -->
+	<div id="headerwrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2"><br><br>
+					<h1>Layover</h1><br><br>
+					<h2>Your airport tinder experience</h2><br><br><br>
+                    <a href = {% url 'login' %}><button type="button" class="btn btn-green">Login</button></a>
+                    <a href = {% url 'register'%}><button type="button" class="btn btn-green">Sign Up</button></a>
+					<div class="spacer"></div>
+{#					<i class="fa fa-angle-down"></i>#}
+			    </div>
+			</div><!-- row -->
+		</div><!-- /container -->
+	</div><!-- /headerwrap -->
+
+	<!-- WELCOME SECTION -->
+    <div class="container">
+      <div class="row mt" align="center">
+      	<div class="col-lg-8">
+	        <h1>We connect strangers during times of delayed madness at the airport!</h1>
+	        <p>Come experience the fun of meeting strangers who share your woes, have a drink, coffee, network, etc while you wait for your delayed flight!
+            How AWESOME is that!?</p>
+
+{#      	<div class="col-lg-4">#}
+{#      		<p class="pull-right"><br><button type="button" class="btn btn-green">Start Your Project Now</button></p>#}
+      	</div>
+      </div><!-- /row -->
+    </div><!-- /.container -->
+    
+    <!-- PORTFOLIO SECTION -->
+    <div id="portfolio">
+    	<div class="container">
+	    	<div class="row mt">
+				<ul class="grid effect-2" id="grid">
+					<li><a href="singleproject.html"><img src="/static/img/portfolio/5.jpg"></a></li>
+					<li><a href="singleproject.html"><img src="/static/img/portfolio/3.jpg"></a></li>
+					<li><a href="singleproject.html"><img src="/static/img/portfolio/2.jpg"></a></li>
+					<li><a href="singleproject.html"><img src="/static/img/portfolio/6.jpg"></a></li>
+					<li><a href="singleproject.html"><img src="/static/img/portfolio/1.jpg"></a></li>
+                    <li><a href="singleproject.html"><img src="/static/img/portfolio/4.jpg"></a></li>
+
+				</ul>
+	    	</div><!-- row -->
+	    </div><!-- container -->
+    </div><!-- portfolio -->
+
+
+	<!-- SERVICES SECTION -->
+	<div id="services">
+		<div class="container">
+
+            	<h3  id="service" align="center" ><i class="fa fa-certificate">
+                    Welcome to the planer finder app!
+                </h3></i>
+                    <br><p align="center" style="color: grey">Few rules here: <br>
+                    1. Register<br>
+                    2. Login<br>
+                    3. Check your flight status<br>
+                    4. If flight is on time - Bon Voyage!<br>
+                    5. If flight is delayed - Go grab drinks with someone cool!<br>
+                    6. Get crunk ;)<br>
+        Enjoy your flight and hope you meet someone amazing! Go out there and mingle!
+
+			<div class="row mt">
+
+                    <div class="col-lg-1 centered">
+
+                    </div>
+                    <div class="col-lg-3 centered" >
+                        <br><br><br><br><br>
+                    </div>
+
+			</div><!-- row -->
+		</div><!-- container -->
+	</div><!-- services section -->
+
+	
+	
+	<!-- SOCIAL FOOTER --->
+	<section id="contact"></section>
+	<div id="sf">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 dg">
+					<h4 class="ml">FACEBOOK</h4>
+					<p class="centered"><a href="#"><i class="fa fa-facebook"></i></a></p>
+					<p class="ml">> Become A Friend</p>
+				</div>
+				<div class="col-lg-4 lg">
+					<h4 class="ml">TWITTER</h4>
+					<p class="centered"><a href="#"><i class="fa fa-twitter"></i></a></p>
+					<p class="ml">> Follow Us</p>
+				</div>
+				<div class="col-lg-4 dg">
+					<h4 class="ml">GOOGLE +</h4>
+					<p class="centered"><a href="#"><i class="fa fa-google-plus"></i></a></p>
+					<p class="ml">> Add Us To Your Circle</p>
+				</div>
+			</div><!-- row -->
+		</div><!-- container -->
+	</div><!-- Social Footer -->
+	
+	<!-- CONTACT FOOTER --->
+	<div id="cf">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+		        	<div id="mapwrap">
+                        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script><div style="overflow:hidden;height:550px;width:848px;"><div id="gmap_canvas" style="height:550px;width:848px;"></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style><a class="google-map-code" href="http://www.map-embed.com" id="get-map-data">www.map-embed.com</a></div><script type="text/javascript"> function init_map(){var myOptions = {zoom:14,center:new google.maps.LatLng(37.7908767,-122.4016454),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(37.7908767, -122.4016454)});infowindow = new google.maps.InfoWindow({content:"<b>Planer Finder LLC</b><br/>225 Bush Street<br/>San Francisco, CA 94104" });google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+{#						<iframe height="400" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.es/maps?t=m&amp;ie=UTF8&amp;ll=37.79086,-122.40147&amp;spn=37.79086,-122.40147&amp;z=17&amp;output=embed"></iframe>#}
+					</div>	
+				</div><!--col-lg-8-->
+				<div class="col-lg-4">
+					<h4>Contact Information<br/> <br>Planer Finder HQ</h4>
+					<p><br>
+						225 Bush St.<br/>
+						San Francisco, CA 94104
+					</p>
+					<p>
+						P: +1 415-405-2329<br/>
+						F: +1 415-405-2329<br/>
+						E: <a href="mailto:#">hookitup@layover.com</a>
+					</p>
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+					<p>“You wanna fly, you got to give up the shit that weighs you down.”
+                            ― Toni Morrison, Song of Solomon</p>
+				</div><!--col-lg-4-->
+			</div><!-- row -->
+		</div><!-- container -->
+	</div><!-- Contact Footer -->
+	
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/main.js"></script>
+	<script src="/static/js/masonry.pkgd.min.js"></script>
+	<script src="/static/js/imagesloaded.js"></script>
+    <script src="/static/js/classie.js"></script>
+	<script src="/static/js/AnimOnScroll.js"></script>
+	<script>
+		new AnimOnScroll( document.getElementById( 'grid' ), {
+			minDuration : 0.4,
+			maxDuration : 0.7,
+			viewportFactor : 0.2
+		} );
+	</script>
+  </body>
+</html>

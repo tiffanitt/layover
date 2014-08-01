@@ -1,0 +1,132 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="/static/ico/favicon.png">
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="{% static "js/flight.js" %}"></script>
+
+    <title>Planer Finder - by Tiffani</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/main.css" rel="stylesheet">
+
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="/static/js/modernizr.custom.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+  </head>
+<body id='profile'>
+
+   <p style="font-weight:bold" align="center"> Welcome {{ user.first_name}} {{user.last_name }} ! Your last login time was at {{ user.last_login }}</p>
+
+
+    <p align="center"> Want to check your flight status?
+        <br>Please Enter Your Flight Information Below!
+    </p>
+
+
+    <form>
+        <div class="l1">
+                 <p style="color: white">Airline: ( <u>IATA code only</u>) </div>
+                 <div class="l2"> <input id='airline' type="text" name="airline"><br></p>
+                </div>
+        <div class="l3">
+                 <p style="color: white">Flight #: </div>
+                 <div class="l4"><input id='flight_num' type="text" name="flight#"><br></p>
+        </div>
+        <div class="l5">
+            <p style="color: white">Year:</div>
+                 <div class="l6"><input id='year' type="text" name="year"><br></p>
+                 </div>
+        <div class="l7">
+            <p style="color: white">Month:
+                </div>
+                <div class="l8"><input id='month' type="text" name="month"><br></p>
+                </div>
+        <div class="l9">
+            <p style="color: white">Day:</div>
+                 <div class="l10"><input id='day' type="text" name="day"><br></p>
+                 </div>
+    </form><br>
+
+<div id = 'killme'>
+    <div align="center">
+     <button id="give_me">
+         Search
+     </button>
+    </div>
+</div>
+
+<div id = 'display' align="center" >
+
+</div>
+
+
+<div id='myModal2' class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div id='modal1' class="modal-content">
+        <p align="center">Awesome! Your flight is currently on time and you're good to go!
+        <br>
+            Have a safe flight!
+        </p>
+    </div>
+  </div>
+</div>
+
+<div id='myModal' class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+       <p  align="center">We're sorry your flight is delayed...<br>
+         <div>
+            <p id="minutes" align="center">
+
+            </p>
+
+           <p align="center"> Let's not waste time and do something fun!<br>
+            What would you like to do now?
+           </p><br>
+
+         </div>
+        <div class="selection">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit">
+            </form>
+            </div>
+    </div>
+  </div>
+</div>
+
+
+<p id='form1' align="center">
+    <button type= 'button'>
+        <a href={% url 'logout' %}>
+            Logout</a>
+    </button>
+</p>
+
+</body>
+
+
+</html>
