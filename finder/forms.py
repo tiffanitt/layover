@@ -12,7 +12,9 @@ class EmailUserCreationForm(UserCreationForm):
     class Meta:
         model = Member
         fields = ("username", "email", "password1", "password2", "first_name", "last_name", "age", "gender")
-
+        
+        # This whole function needs to be indented to the left by one tab, it's too far over.
+        # It should be part of 'EmailUserCreationForm' not 'class Meta'
         def clean_username(self):
             # Since User.username is unique, this check is redundant,
             # but it sets a nicer error message than the ORM. See #13147.
