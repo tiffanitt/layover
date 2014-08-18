@@ -7,6 +7,7 @@ $(document).ready(function(){
     var display_info = {};
     var relevant_info = [];
 
+
     $('#give_me').on('click', function(){
         var airline = $('#airline').val();
         var flight_num = $('#flight_num').val();
@@ -58,7 +59,52 @@ $('#message1').on('click',function(){
 
 $('#message2').on('click',function(){
     $('#creepin2').modal('show');
-})
+});
+
+
+
+ //////////ADDING GEOLOCATION TO FIGURE OUT WHICH AIRPORT USER BELONGS TO
+
+    var latitude;
+    var longitude;
+
+     Number.prototype.toRad = function() { return this * (Math.PI / 180); };
+
+   // SUCCESS FUNCTION TO GET USER PERMISSION FOR CURRENT LATITUDE & LONGITUDE
+    function success(position) {
+        latitude = Number(position.coords.latitude);
+        longitude = Number(position.coords.longitude);
+
+    // CHECK TO SEE IF GEOLOCATION EXISTS
+    if (navigator.geolocation) {
+        console.log("Geolocation found, getting coordinates now...");
+        navigator.geolocation.getCurrentPosition(success, error);
+    } else {
+        console.log("Geolocation not found, please try again!");
+        error("not supported");
+        }
+    }
+
+  var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+  var options = {
+    zoom: 15,
+    center: coords,
+    mapTypeControl: false,
+    navigationControlOptions: {
+    	style: google.maps.NavigationControlStyle.SMALL
+    },
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  var map = new google.maps.Map(document.getElementById("mapcontainer"), options);
+
+  var marker = new google.maps.Marker({
+      position: coords,
+      map: map,
+      title:"You are here!"
+  });
+
+ /////END OF GEOLOCATION CODES
 
 
 
