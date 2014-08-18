@@ -1,8 +1,6 @@
 $(document).ready(function(){
     var myApiKey = 'a7fe0334733ffa3edd9421e2355a6425';
     var appID = '7971b25a';
-    var airline;
-    var flight_num;
     var year;
     var month;
     var day;
@@ -10,8 +8,8 @@ $(document).ready(function(){
     var relevant_info = [];
 
     $('#give_me').on('click', function(){
-        airline = $('#airline').val();
-        flight_num = $('#flight_num').val();
+        var airline = $('#airline').val();
+        var flight_num = $('#flight_num').val();
         year = $('#year').val();
         month = $('#month').val();
         day = $('#day').val();
@@ -29,12 +27,17 @@ $(document).ready(function(){
                     display_info.status=data.flightStatuses[i].status;
                     relevant_info.push(display_info);
                     if (data.flightStatuses[i].hasOwnProperty('delays')) {
-                        $('#display').append("<div><p>" + "Departure Airport: " + display_info.departure_airport + "<br>" + "Arrival Airport: " + display_info.arrival_airport + "<br>" + "Delayed Minutes: "+ data.flightStatuses[i].delays.departureGateDelayMinutes + "</p></div>");
-                        $('#minutes').append("Flight is delayed for: "+ "<br>"+data.flightStatuses[i].delays.departureGateDelayMinutes+" minutes"+"<br>");
+                        $('#display').append("<div><p>" + "Departure Airport: " + display_info.departure_airport + "<br>"
+                            + "Arrival Airport: " + display_info.arrival_airport + "<br>" + "Delayed Minutes: "
+                            + data.flightStatuses[i].delays.departureGateDelayMinutes + "</p></div>");
+                        $('#minutes').append("Flight is delayed for: "+ "<br>"+data.flightStatuses[i].delays.departureGateDelayMinutes
+                            +" minutes"+"<br>");
                         $('#myModal').modal('show');
                     }
                     else {
-                        $('#display').append("<div><p>" + " Departure Airport: "+display_info.departure_airport+ "<br>"+" Arrival Airport: "+display_info.arrival_airport+ "<br>"+" Current Flight Status: "+ display_info.status+"<br>"+"</p></div>");
+                        $('#display').append("<div><p>" + " Departure Airport: "+display_info.departure_airport+ "<br>"
+                            +" Arrival Airport: "+display_info.arrival_airport+ "<br>"+" Current Flight Status: "
+                            + display_info.status+"<br>"+"</p></div>");
                         $('#myModal2').modal('show');
                     }
                 }
