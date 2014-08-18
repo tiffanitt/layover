@@ -31,11 +31,17 @@ p {
 }
 
 #form1{
-    position: absolute;
+    color: #fff;
+    position: relative;
+    background-color: #1dd2af;
+    border-color: #1dd2af;
+    font-weight: 400;
+    width: 20%;
+    height: 20%;
     right:    -25px;
     bottom:   0;
-    left: 65px;
-    top: 350px;
+    left: -420px;
+    top: 210px;
 }
 
 
@@ -110,18 +116,18 @@ p {
     -o-transition: color .1s ease-in, background .1s ease-in;
     transition: color .1s ease-in, background .1s ease-in;
 }
-#killme {
-    color: #16a085;
-    position: absolute;
-    right:    -30px;
-    bottom:   300px;
-    left: 60px;
-    word-wrap: break-word;
-    -webkit-transition: color .1s ease-in, background .1s ease-in;
-    -moz-transition: color .1s ease-in, background .1s ease-in;
-    -ms-transition: color .1s ease-in, background .1s ease-in;
-    -o-transition: color .1s ease-in, background .1s ease-in;
-    transition: color .1s ease-in, background .1s ease-in;
+#give_me {
+    color: #fff;
+    position: relative;
+    background-color: #1dd2af;
+    border-color: #1dd2af;
+    font-weight: 400;
+    width: 20%;
+    height: 20%;
+    right:    -25px;
+    bottom:   0;
+    left: -420px;
+    top: 210px;
 }
 .selection{
     margin-top: -10px;
@@ -397,14 +403,13 @@ hr {
 }
 
 .login {
-    background: url(../img/wing.jpg) no-repeat center top;
+    background: url(../img/wing.jpg) repeat center top;
     margin-top: -10px;
-    padding-top: 20px;
+    padding-top: 150px;
     text-align: center;
-    background-attachment: relative;
+    background-attachment: fixed;
     background-position: center center;
-    min-height: 500px;
-    width: 100%;
+    width: 80%;
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
     -o-background-size: 100%;
@@ -415,7 +420,7 @@ hr {
     background-size: cover;
 }
 .logout {
-    background: url(../img/wing.jpg) no-repeat center top;
+    background: url(../img/wing.jpg) repeat center top;
     margin-top: -10px;
     padding-top: 20px;
     text-align: center;
@@ -434,13 +439,13 @@ hr {
 }
 
 #profile {
-    background: url(../img/wing.jpg) no-repeat center top;
+    background: url(../img/wing.jpg) repeat center top;
     margin-top: -10px;
-    padding-top: 20px;
+    padding-top: 70px;
     text-align: center;
-    background-attachment: relative;
+    background-attachment: absolute;
     background-position: center center;
-    min-height: 500px;
+    min-height: 300px;
     width: 100%;
     -webkit-background-size: 100%;
     -moz-background-size: 100%;

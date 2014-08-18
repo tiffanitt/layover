@@ -12,9 +12,7 @@ class Member(AbstractUser):
         (FEMALE, 'Female'),
         (OTHER, 'Other'),
     )
-    flight_num = models.CharField(max_length=30)
     airport = models.CharField(max_length=10)
-    airline = models.CharField(max_length=30)
     gender = models.CharField(max_length=10, choices=options)
     age = models.PositiveIntegerField(null=True)
 
@@ -25,6 +23,7 @@ class Member(AbstractUser):
 
 class Category(models.Model):
     name = models.CharField(max_length=35)
+    user = models.ForeignKey(Member, related_name='category_user')
 
     def __unicode__(self):
         return self.name
