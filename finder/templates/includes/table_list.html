@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Example of Twitter Bootstrap 3 Table with Emphasis Classes</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<style type="text/css">
+    .bs-example{
+    	margin: 100px;
+        margin-top: 15px;
+    }
+</style>
+</head>
+<body>
+<div class="bs-example">
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="color: lightseagreen">Username</th>
+                <th style="color: lightseagreen">Message Me</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for event in people %}
+        	<tr class="active">
+                        <td class="success"> {{ event.username }}</td>
+                        <td class="success"><button >Message Me</button></td>
+            </tr>
+         {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

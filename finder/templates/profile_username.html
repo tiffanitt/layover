@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Profile
+{% endblock title %}
+
+
+{% block content %}
+
+    {% include 'includes/view_profile.html' with user=profile_user%}
+
+{% endblock content %}

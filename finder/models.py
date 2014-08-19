@@ -3,6 +3,18 @@ from django.db import models
 
 # Create your models here.
 
+class Category(models.Model):
+    name = models.CharField(max_length=35)
+
+    def __unicode__(self):
+        return self.name
+
+class Event(models.Model):
+    category = models.ForeignKey(Category, related_name='event_category')
+
+    def __unicode__(self):
+        return self.category.name
+
 class Member(AbstractUser):
     MALE = 'm'
     FEMALE = 'f'
@@ -12,25 +24,14 @@ class Member(AbstractUser):
         (FEMALE, 'Female'),
         (OTHER, 'Other'),
     )
-    airport = models.CharField(max_length=10)
+    airport = models.CharField(max_length=10, blank=True)
     gender = models.CharField(max_length=10, choices=options)
     age = models.PositiveIntegerField(null=True)
-
-
-    def __unicode__(self):
-        return self.username
-
-
-class Category(models.Model):
-    name = models.CharField(max_length=35)
-    user = models.ForeignKey(Member, related_name='category_user')
+    event = models.ForeignKey(Event, blank=True, null=True)
 
     def __unicode__(self):
-        return self.name
+        return u"{}".format(self.username)
 
-class Event(models.Model):
-    name = models.CharField(max_length=20, blank=False)
-    category = models.ForeignKey(Category, related_name='event_category')
 
-    def __unicode__(self):
-        return self.name
+
+

@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from finder.forms import *
 from django.shortcuts import render, redirect
-from finder.models import Event
+
 # Create your views here.
 
 
@@ -10,19 +10,17 @@ def home(request):
 
 
 def margarita(request):
-    set = Event.objects.filter(category__pk=1)
-    return render(request, 'margarita.html', {'set': set})
+    people = Member.objects.filter(event__category__name='I want a margarita!')
+    return render(request, 'margarita.html', {'people': people})
 
 
 def coffee(request):
-    set = Event.objects.filter(category__pk=2)
-    return render(request, 'coffee.html', {'set':set})
-
+    people = Member.objects.filter(event__category__name='I want to grab coffee!')
+    return render(request, 'margarita.html', {'people': people})
 
 def lounge(request):
-    set = Event.objects.filter(category__pk=3)
-    return render(request, 'lounge.html', {'set':set})
-
+    people = Member.objects.filter(event__category__name='I want to lounge somewhere!')
+    return render(request, 'margarita.html', {'people': people})
 
 @login_required()
 def profile(request):

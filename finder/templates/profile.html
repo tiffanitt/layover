@@ -1,10 +1,9 @@
 {% extends 'base.html' %}
 
+
 {% block content %}
 
-  </head>
 <body id='profile'>
-
    <p style="font-weight:bold" align="center"> Welcome {{ user.first_name}} {{user.last_name }} ! Your last login time was at
        {{ user.last_login }}</p><br>
 
@@ -45,43 +44,23 @@
      </button><br><br>
 
     <button id='form1' type= 'button'>
-        <a href={% url 'logout' %}>
+        <a href="{% url 'logout' %}">
             Logout</a>
     </button>
-
     </div>
 </div>
 
-<div id = 'display' align="center" >
-
-</div>
-
-
-<div id='myModal2' class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div id='modal1' class="modal-content">
-        <p align="center">Awesome! Your flight is currently on time and you're good to go!
-        <br>
-            Have a safe flight!
-        </p>
-    </div>
-  </div>
-</div>
-
-<div id='myModal' class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div id='flightModal' class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
 
        <p  align="center">We're sorry your flight is delayed...<br>
          <div>
             <p id="minutes" align="center">
-
             </p>
-
            <p align="center"> Let's not waste time and do something fun!<br>
             What would you like to do now?
            </p><br>
-
          </div>
         <div class="selection">
             <form method="POST">
@@ -94,6 +73,21 @@
   </div>
 </div>
 
-</body>
+<div id = 'display' align="center" >
+</div>
+
+<div id='flightModal1' class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div id='modal1' class="modal-content">
+        <p align="center">Awesome! Your flight is currently on time and you're good to go!
+        <br>
+            Have a safe flight!
+        </p>
+    </div>
+  </div>
+</div>
+
+
+
 
 {% endblock %}
