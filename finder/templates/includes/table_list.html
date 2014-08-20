@@ -15,6 +15,7 @@
 </style>
 </head>
 <body>
+
 <div class="bs-example">
     <table class="table">
         <thead>
@@ -24,10 +25,12 @@
             </tr>
         </thead>
         <tbody>
+
         {% for event in people %}
-        	<tr class="active">
+        	<tr>
                         <td class="success"> {{ event.username }}</td>
-                        <td class="success"><button >Message Me</button></td>
+                        <td class="success" id="chats"><button >Message Me</button></td>
+
             </tr>
          {% endfor %}
         </tbody>

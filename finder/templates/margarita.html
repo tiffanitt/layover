@@ -1,34 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
   </head>
 <body class="marga">
-
+<FORM>
+<INPUT Type="BUTTON" VALUE="Message Me" ONCLICK="window.location.href='http://127.0.0.1:8000/chat/'">
+</FORM>
 <div  align="center">
     {% include 'includes/table_list.html' %}
-
-
-
-{#         <div id="creepin" class="modal fade">#}
-{#          <div class="modal-dialog">#}
-{#            <div class="modal-content">#}
-{#              <div class="modal-header">#}
-{#                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>#}
-{#                  Title:<input type="text" >#}
-{#              </div>#}
-{#              <div class="modal-body">#}
-{#                  Message:<textarea name="sendform" cols="55" rows="15" > What's up </textarea>#}
-{#              </div>#}
-{#              <div class="modal-footer">#}
-{#                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>#}
-{#                <button id="boom" type="button" class="btn btn-primary">Send</button>#}
-{#              </div>#}
-{#            </div><!-- /.modal-content -->#}
-{#          </div><!-- /.modal-dialog -->#}
-{#        </div><!-- /.modal -->#}
-{#    </li>#}
-
 </div>
 
 {% endblock %}

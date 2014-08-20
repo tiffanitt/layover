@@ -3,7 +3,8 @@ from finder.forms import *
 from django.shortcuts import render, redirect
 
 # Create your views here.
-
+def chat(request):
+    return render(request, 'chat.html')
 
 def home(request):
     return render(request, 'index.html')
