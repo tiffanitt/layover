@@ -799,3 +799,8 @@ label{
     opacity: 1;
 }
 }
+
+.modal-content {margin-top: 100px;}
+.modal-body {padding: 75px 25px;}
+
+.btn-teal {background: #1dd2af;}

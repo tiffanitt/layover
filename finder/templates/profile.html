@@ -50,28 +50,37 @@
     </div>
 </div>
 
-<div id='flightModal' class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+<div id='flightModal' class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
     <div class="modal-content">
+        <div class="modal-body">
+               <p  align="center">We're sorry your flight is delayed...</p>
+               <p id="minutes" align="center"></p>
+               <p align="center"> Let's not waste time and do something fun!<br>
+                What would you like to do now?
+               </p>
+            <!--<div class="selection">-->
+                
+                <form method="POST" role="form">
+                    {% csrf_token %}
+                    <div class="form-group">
+                            {{ form }}
+                            <br>
+                            <input type="submit" class="input-lg form-control btn-teal" >
 
-       <p  align="center">We're sorry your flight is delayed...<br>
-         <div>
-            <p id="minutes" align="center">
-            </p>
-           <p align="center"> Let's not waste time and do something fun!<br>
-            What would you like to do now?
-           </p><br>
-         </div>
-        <div class="selection">
-            <form method="POST">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <input type="submit">
-            </form>
+                    </div>
+
+                </form>
+             <!--</div>-->
          </div>
     </div>
   </div>
 </div>
+
+    <script type="text/javascript">
+        $("select#id_category").addClass("input-lg form-control");
+    </script>
+
 
 <div id = 'display' align="center" >
 </div>
