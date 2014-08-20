@@ -29,8 +29,9 @@
         {% for event in people %}
         	<tr>
                         <td class="success"> {{ event.username }}</td>
-                        <td class="success" id="chats"><button >Message Me</button></td>
-
+                        <td class="success">
+                           <INPUT Type="BUTTON" VALUE="Message Me" ONCLICK="window.location.href='http://127.0.0.1:8000/chat/'">
+                         </td>
             </tr>
          {% endfor %}
         </tbody>

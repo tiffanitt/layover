@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,6 +30,7 @@
     
     <script src="/static/js/modernizr.custom.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
   </head>
 
@@ -64,8 +66,8 @@
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2"><br><br>
 					<h1>Layover</h1><br><br>
-					<h2>Your airport tinder experience</h2><br><br><br>
-                    <a href = {% url 'login' %}><button type="button" class="btn btn-green">Login</button></a>
+					<h2>A networking experience on the cloud</h2><br><br><br>
+                    <a href = "{% url 'login' %}"><button type="button" class="btn btn-green">Login</button></a>
                     <a href = {% url 'register'%}><button type="button" class="btn btn-green">Sign Up</button></a>
 					<div class="spacer"></div>
 {#					<i class="fa fa-angle-down"></i>#}
@@ -73,6 +75,7 @@
 			</div><!-- row -->
 		</div><!-- /container -->
 	</div><!-- /headerwrap -->
+
 
 	<!-- WELCOME SECTION -->
     <div class="container">
@@ -111,16 +114,16 @@
 		<div class="container">
 
             	<h3  id="service" align="center" ><i class="fa fa-certificate">
-                    Welcome to the planer finder app!
+                    Welcome to the Layover app!
                 </h3></i>
-                    <br><p align="center" style="color: grey">Few rules here: <br>
+                    <br><p align="center" style="color: grey">Few simple steps to get started: <br>
                     1. Register<br>
                     2. Login<br>
                     3. Check your flight status<br>
                     4. If flight is on time - Bon Voyage!<br>
                     5. If flight is delayed - Go grab drinks with someone cool!<br>
-                    6. Get crunk ;)<br>
-        Enjoy your flight and hope you meet someone amazing! Go out there and mingle!
+                    <br>
+        <b>Enjoy your flight and hope you meet someone amazing! Go out there and mingle!</b>
 
 			<div class="row mt">
 
@@ -144,17 +147,17 @@
 			<div class="row">
 				<div class="col-lg-4 dg">
 					<h4 class="ml">FACEBOOK</h4>
-					<p class="centered"><a href="#"><i class="fa fa-facebook"></i></a></p>
+					<p class="centered"><a href="http://www.facebook.com/"><i class="fa fa-facebook"></i></a></p>
 					<p class="ml">> Become A Friend</p>
 				</div>
 				<div class="col-lg-4 lg">
 					<h4 class="ml">TWITTER</h4>
-					<p class="centered"><a href="#"><i class="fa fa-twitter"></i></a></p>
+					<p class="centered"><a href="http://www.twitter.com/"><i class="fa fa-twitter"></i></a></p>
 					<p class="ml">> Follow Us</p>
 				</div>
 				<div class="col-lg-4 dg">
 					<h4 class="ml">GOOGLE +</h4>
-					<p class="centered"><a href="#"><i class="fa fa-google-plus"></i></a></p>
+					<p class="centered"><a href="http://www.plus.google.com/"><i class="fa fa-google-plus"></i></a></p>
 					<p class="ml">> Add Us To Your Circle</p>
 				</div>
 			</div><!-- row -->

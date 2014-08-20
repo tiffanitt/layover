@@ -48,18 +48,6 @@ $(document).ready(function() {
         });
 
 
-//        $('.message').click(function () {
-//            $('#creepin').modal('show');
-//        });
-//
-//        $('#message1').click(function () {
-//            $('#creepin1').modal('show');
-//        });
-//
-//        $('#message2').click(function () {
-//            $('#creepin2').modal('show');
-//        });
-
 
         //////////ADDING GEOLOCATION TO FIGURE OUT WHICH AIRPORT USER BELONGS TO
 
