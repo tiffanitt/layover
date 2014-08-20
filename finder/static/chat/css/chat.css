@@ -1,258 +1,59 @@
-/*------------- Reset browser differences ------------- */
+.chat
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 
+.chat li
+{
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #B3A9A9;
+}
 
+.chat li.left .chat-body
+{
+    margin-left: 60px;
+}
 
-* {
-	padding: 0;
-	margin: 0;
+.chat li.right .chat-body
+{
+    margin-right: 60px;
 }
 
 
-/* ------------ Body styles ------------ */
-
-
-body {
-	background-color: #f0f1f3;
-	color:#667073;
-	font: 16px/1.3 'Arial',sans-serif;
+.chat li .chat-body p
+{
+    margin: 0;
+    color: #777777;
 }
 
-
-
-
-/* ------------ Header styles ------------ */
-
-
-
-/* ------ Home ------ */
-
-
-/*.homebanner {*/
-    /*position: relative;*/
-	/*height: 80px;*/
-    /*align-content: center;*/
-	/*background-color: #3c4446;*/
-    /*text-transform: uppercase;*/
-/*}*/
-
-.homebannertext {
-	text-align:center;
-    font-size: 200%;
-    text-transform: uppercase;
-	padding-top: 20px;
-	font-family: 'Open Sans Condensed',serif;
-	font-weight: bold;
-	color:white;
-    background-color: #3c4446;
-}
-.homebannertext span {
-	color: #d6441b;
-
+.panel .slidedown .glyphicon, .chat .glyphicon
+{
+    margin-right: 5px;
 }
 
-#logo {
-	text-decoration: none;
-	color:white;
-}
-#logo:visited {
-	color: white;
+.panel-body
+{
+    overflow-y: scroll;
+    height: 250px;
 }
 
-
-/* ------------ Section styles ------------ */
-
-
-
-
-/* ------ Chat Screen ------ */
-
-
-.image {
-	clear:both;
-	float:right;
-	height: 160px;
-	width: 80px;
-	text-align:center;
-	overflow: hidden;
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
 }
 
-.image img {
-	float: left;
-	width: 80px;
-	height: 80px;
-	border-radius: 50%;
+::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: #F5F5F5;
 }
 
-/*.body {*/
-	/*text-align:center;*/
-	/*width: 40%;*/
-	/*display: block;*/
-	/*margin:0px auto 650px;*/
-	/*background-color: #ffffff;*/
-	/*color: #637277;*/
-/*}*/
-
-/*.chats {*/
-	/*list-style-type: none;*/
-	/*margin-top:10px;*/
-/*}*/
-
-/*.me {*/
-	/*clear:both;*/
-	/*float:left;*/
-	/*margin-bottom:10px;*/
-/*}*/
-
-/*.you {*/
-	/*clear:both;*/
-	/*float:right;*/
-	/*margin-bottom:10px;*/
-/*}*/
-
-/*.you .image{*/
-	/*float:right;*/
-/*}*/
-
-/*.chats .me p {*/
-	/*text-align:left;*/
-	/*float: left;*/
-	/*display: inline-block;*/
-	/*margin-left: 20px;*/
-	/*margin-bottom:30px;*/
-	/*padding: 25px 34px;*/
-	/*min-width: 160px;*/
-	/*min-height: 10px;*/
-	/*max-width: 510px;*/
-	/*background-color: #FFF;*/
-	/*border-radius: 3px;*/
-	/*box-shadow: 0px 3px 3px #E3E4E6;*/
-	/*color: #637277;*/
-	/*line-height: 1.4;*/
-	/*word-wrap: break-word;*/
-/*}*/
-
-/*.chats .you p {*/
-	/*text-align:left;*/
-	/*float: left;*/
-	/*display: inline-block;*/
-	/*margin-right:20px;*/
-	/*margin-bottom:30px;*/
-	/*padding: 25px 34px;*/
-	/*min-width: 160px;*/
-	/*min-height: 10px;*/
-	/*max-width: 510px;*/
-	/*background-color: #FFF;*/
-	/*border-radius: 3px;*/
-	/*box-shadow: 0px 3px 3px #E3E4E6;*/
-	/*color: #637277;*/
-	/*line-height: 1.4;*/
-	/*word-wrap: break-word;*/
-/*}*/
-
-/*.image b {*/
-	/*overflow: hidden;*/
-	/*display: block;*/
-	/*clear: both;*/
-	/*padding-top: 7px;*/
-/*}*/
-
-/*.image i{*/
-	/*font-size: 12px;*/
-	/*line-height: 1.2;*/
-	/*display: block;*/
-	/*opacity: 0.8;*/
-	/*padding-top: 4px;*/
-/*}*/
-
-
-/* ------------ Footer styles ------------ */
-
-/*footer {*/
-	/*position:fixed;*/
-	/*bottom:0;*/
-	/*left:0;*/
-	/*width:100%;*/
-	/*padding-top: 30px;*/
-	/*background-color: white;*/
-	/*height: 130px;*/
-/*}*/
-/*#chatform {*/
-	/*width:700px;*/
-	/*margin: 0 auto;*/
-	/*background-color: white;*/
-/*}*/
-
-/*#message {*/
-	/*width: 550px;*/
-	/*height: 80px;*/
-	/*display: block;*/
-	/*float:left;*/
-	/*margin: 0 auto;*/
-	/*background-color: #f9f9f9;*/
-	/*border: 1px solid #cccccc;*/
-	/*border-radius: 2px;*/
-	/*padding-left: 20px;*/
-	/*padding-top: 20px;*/
-	/*resize: none;*/
-	/*font:inherit;*/
-	/*color:inherit;*/
-/*}*/
-
-/*#submit {*/
-	/*width: 110px;*/
-	/*height: 60px;*/
-	/*float:right;*/
-	/*text-align:center;*/
-	/*background-color: #73b4d4;*/
-	/*display: block;*/
-	/*margin: 0 auto;*/
-	/*border: none;*/
-	/*box-shadow: 3px 3px 3px #efedee;*/
-	/*border-radius: 2px;*/
-	/*color:white;*/
-	/*font-weight: bold;*/
-	/*font-size: 17px;*/
-	/*outline: none;*/
-	/*cursor:pointer;*/
-/*}*/
-
-
-
-
-/* ---------------------- HIDE -------------------------- */
-
-
-/*.connected {*/
-	/*display: none;*/
-/*}*/
-
-/*.personinside {*/
-	/*display: none;*/
-/*}*/
-
-/*.invite-textfield {*/
-	/*display:none;*/
-/*}*/
-
-/*.left {*/
-	/*display:none;*/
-/*}*/
-
-/*.toomanypeople {*/
-	/*display:none;*/
-/*}*/
-
-/*.nomessages{*/
-	/*display:none;*/
-/*}*/
-
-/*footer {*/
-	/*display:none;*/
-/*}*/
-
-/*.chatscreen{*/
-	/*display:none;*/
-	/*width:700px;*/
-	/*margin: 0 auto 200px;*/
-	/*overflow:hidden;*/
-/*}*/
+::-webkit-scrollbar-thumb
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
