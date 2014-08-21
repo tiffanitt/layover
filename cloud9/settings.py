@@ -87,12 +87,6 @@ AUTH_USER_MODEL = 'finder.Member'
 
 LOGIN_REDIRECT_URL = 'profile'
 
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'bach.le.tr@gmail.com'
-EMAIL_HOST_PASSWORD = 'tiffanitt'
-EMAIL_PORT = 587
-DEFAULT_FROM_EMAIL = 'bach.le.tr@gmail.com'
 
 try:
     from local_settings import *
