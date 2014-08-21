@@ -13,19 +13,19 @@
                         <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
                             <span class="glyphicon glyphicon-chevron-down"></span>
                         </button>
-                        <ul class="dropdown-menu slidedown">
-                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-refresh">
-                            </span>Refresh</a></li>
-                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-ok-sign">
-                            </span>Available</a></li>
-                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-remove">
-                            </span>Busy</a></li>
-                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-time"></span>
-                                Away</a></li>
-                            <li class="divider"></li>
-                            <li><a href={% url 'logout' %}><span class="glyphicon glyphicon-off"></span>
-                                Sign Out</a></li>
-                        </ul>
+                            <ul class="dropdown-menu slidedown">
+                                <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-refresh">
+                                </span>Refresh</a></li>
+                                <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-ok-sign">
+                                </span>Available</a></li>
+                                <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-remove">
+                                </span>Busy</a></li>
+                                <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-time"></span>
+                                    Away</a></li>
+                                <li class="divider"></li>
+                                <li><a href={% url 'logout' %}><span class="glyphicon glyphicon-off"></span>
+                                    Sign Out</a></li>
+                            </ul>
                     </div>
                 </div>
                 <div class="panel-body">
@@ -43,7 +43,7 @@
                      <div class="panel-footer" >
                         <div class="input-group">
                         <input ng-model='msg' ng-keydown="addMessage($event)" type='text' id='messageInput'  placeholder='Type a message...' style="width: 200px ;height: 60px;">
-                            <button class="btn btn-warning btn-sm" id="btn-chat">
+                            <button class="btn btn-success" id="btn-chat">
                                 Send</button>
                         </div>
                      </div>
@@ -172,6 +172,7 @@
 
 
 }
+
 
 .registerme {
     background: url(/static/img/wing.jpg) no-repeat center top;
