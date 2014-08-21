@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load crispy_forms_tags %}
 
 {% block content %}
 
@@ -52,20 +51,22 @@ if (navigator.geolocation) {
 </section>
 
 
-<body class="login">
-    <table>
-    <div>
-       <form method="post" action=".">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <br><input  class="btn btn-green" type="submit" value="Log in"><br><br>
-            <p>Forgot Password? <button class= "btn btn-green" type = 'button' value = 'text' ><a href="{% url 'password_reset' %}">Reset!</a></button>
-        </form>
-    </div>
-    </table>
-</body>
-</html>
-
+<div id="login" class="row" style="height: 1100px;">
+  <div class="col-sm-4 col-sm-offset-4">
+       <form method="post" action="." role="form" class="form-horizontal">
+                 {% csrf_token %}
+           <div class="form-group">
+                <p> {{ form }} </p>
+                 <br>
+                <input class="input-lg form-control btn-teal" type="submit" value="Log in" >
+                <p>Forgot Password?</p>
+                <a href={% url 'password_reset' %}>
+                   <input class="input-lg form-control btn-teal" type="button" value="Reset" />
+                </a>
+           </div>
+       </form>
+  </div>
+</div>
 
 {% endblock %}
 

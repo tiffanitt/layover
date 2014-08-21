@@ -3,98 +3,92 @@
 
 {% block content %}
 
-<body id='profile'>
-   <p style="font-weight:bold" align="center"> Welcome {{ user.first_name}} {{user.last_name }} ! Your last login time was at
-       {{ user.last_login }}</p><br>
+<div id='profile' class="row" style="height: 1100px;">
+   <div class="col-sm-4 col-sm-offset-4">
+       <p style="font-weight:bold" align="center"> Welcome {{ user.first_name}} {{user.last_name }} ! Your last login time was at
+           {{ user.last_login }}</p><br>
 
 
-    <p align="center"> Want to check your flight status?
-        <br>Please Enter Your Flight Information Below!<br><br>
-    </p>
+        <p align="center"> Want to check your flight status?
+            <br>Please Enter Your Flight Information Below!<br><br>
+        </p>
 
-
-    <form>
-        <div class="l1">
-                 <p style="color: white">Airline: ( <u>IATA code only</u>) </div>
-                 <div class="l2"> <input id='airline' type="text" name="airline"><br></p>
-                </div>
-        <div class="l3">
-                 <p style="color: white">Flight #: </div>
-                 <div class="l4"><input id='flight_num' type="text" name="flight#"><br></p>
+        <div id = 'display' align="center" >
         </div>
-        <div class="l5">
-            <p style="color: white">Year:</div>
-                 <div class="l6"><input id='year' type="text" name="year"><br></p>
-                 </div>
-        <div class="l7">
-            <p style="color: white">Month:
-                </div>
-                <div class="l8"><input id='month' type="text" name="month"><br></p>
-                </div>
-        <div class="l9">
-            <p style="color: white">Day:</div>
-                 <div class="l10"><input id='day' type="text" name="day"><br></p>
-                 </div>
-    </form><br>
 
-<div>
-    <div>
-     <button id="give_me">
-         Search
-     </button><br><br>
+        <form role="form" class="form-horizontal">
+            <div class="form-group">
+                <p style="color: white" class="label-control">Airline: ( <u>IATA code only</u>) </p>
+                <input id='airline' type="text" name="airline" class="input-lg form-control">
+            </div>
+            <div class="form-group">
+                <p style="color: white">Flight #: </p>
+                <input id='flight_num' type="text" name="flight#" class="input-lg form-control">
+            </div>
+            <div class="form-group">
+                <p style="color: white" class="label-control">Year:</p>
+                <input id='year' type="text" name="year" class="input-lg form-control">
+            </div>
+            <div class="form-group">
+                <p style="color: white" class="label-control">Month:</p>
+                <input id='month' type="text" name="month" class="input-lg form-control">
+            </div>
+            <div class="form-group">
+                <p style="color: white" class="label-control">Day:</p>
+                <input id='day' type="text" name="day" class="input-lg form-control">
+            </div>
+            <div class="form-group">
+                 <input class="input-lg form-control btn-teal" id="give_me" type="button" value="Search">
+            </div>
+            <div class="form-group">
+                <a href={% url 'logout' %}>
+                    <input class="input-lg form-control btn-teal" type="button" value="Logout" >
+                 </a>
+            </div>
+        </form>
 
-    <button id='form1' type= 'button'>
-        <a href="{% url 'logout' %}">
-            Logout</a>
-    </button>
-    </div>
-</div>
+   </div>
 
-<div id='flightModal' class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-body">
-               <p  align="center">We're sorry your flight is delayed...</p>
-               <p id="minutes" align="center"></p>
-               <p align="center"> Let's not waste time and do something fun!<br>
-                What would you like to do now?
-               </p>
-            <!--<div class="selection">-->
-                
-                <form method="POST" role="form">
-                    {% csrf_token %}
-                    <div class="form-group">
+    <div id='flightModal' class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p  align="center">We're sorry your flight is delayed...</p>
+                    <p id="minutes" align="center"></p>
+                    <p align="center"> Let's not waste time and do something fun!<br>
+                    What would you like to do now?
+                    </p>
+                    <!--<div class="selection">-->
+
+                    <form method="POST" role="form">
+                        {% csrf_token %}
+                        <div class="form-group">
                             {{ form }}
                             <br>
                             <input type="submit" class="input-lg form-control btn-teal" >
-
-                    </div>
-
-                </form>
-             <!--</div>-->
-         </div>
+                        </div>
+                    </form>
+                 <!--</div>-->
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
+
+
+    <div id='flightModal1' class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div id='modal1' class="modal-content">
+            <p align="center">Awesome! Your flight is currently on time and you're good to go!
+            <br>
+                Have a safe flight!
+            </p>
+        </div>
+      </div>
+    </div>
 
     <script type="text/javascript">
         $("select#id_category").addClass("input-lg form-control");
     </script>
-
-
-<div id = 'display' align="center" >
-</div>
-
-<div id='flightModal1' class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div id='modal1' class="modal-content">
-        <p align="center">Awesome! Your flight is currently on time and you're good to go!
-        <br>
-            Have a safe flight!
-        </p>
-    </div>
-  </div>
-</div>
-
 
 {% endblock %}

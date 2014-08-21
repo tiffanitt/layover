@@ -116,19 +116,8 @@ p {
     -o-transition: color .1s ease-in, background .1s ease-in;
     transition: color .1s ease-in, background .1s ease-in;
 }
-#give_me {
-    color: #fff;
-    position: relative;
-    background-color: #1dd2af;
-    border-color: #1dd2af;
-    font-weight: 400;
-    width: 20%;
-    height: 20%;
-    right: -25px;
-    bottom:   0;
-    left: -420px;
-    top: 210px;
-}
+
+
 .selection{
     margin-top: -10px;
     padding-top: 20px;
@@ -402,14 +391,14 @@ hr {
     margin-top: 150px;
 }
 
-.login {
+#login {
     background: url(../img/wing.jpg) repeat center top;
     margin-top: -10px;
     padding-top: 150px;
     text-align: center;
     background-attachment: fixed;
     background-position: center center;
-    width: 80%;
+    width: 100%;
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
     -o-background-size: 100%;
@@ -480,13 +469,14 @@ hr {
 .registerme {
     background: url(../img/wing.jpg) no-repeat center top;
     margin-top: -10px;
-    padding-top: 20px;
+    padding-top: 50px;
     text-align: center;
     background-attachment: relative;
     background-position: center center;
     min-height: 500px;
     width: 100%;
     float: left;
+    padding-bottom: 100px;
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
     -o-background-size: 100%;
@@ -495,11 +485,6 @@ hr {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-}
-
-#registersubmit{
-    position: relative;
-    top:350px;
 }
 
 li {
@@ -512,7 +497,8 @@ li {
 
 label{
     color: white;
-    padding-left: 250px;
+    float: left;
+
 }
 
 #aboutwrap {
@@ -803,4 +789,9 @@ label{
 .modal-content {margin-top: 100px;}
 .modal-body {padding: 75px 25px;}
 
-.btn-teal {background: #1dd2af;}
+.btn-teal {height: 55px; border-radius: 4px; background: rgba(0,0,0,0); border: 2px solid #1dd2af; color: white; transition: .3s ease-in;}
+.btn-teal:hover {background: #1dd2af; transition: .3s ease-in;  }
+
+ul#firechat li {
+    margin-bottom: 5px;
+}

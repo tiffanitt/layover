@@ -11,6 +11,7 @@
     .bs-example{
     	margin: 100px;
         margin-top: 15px;
+        width: 600px;
     }
 </style>
 </head>
@@ -30,7 +31,7 @@
         	<tr>
                         <td class="success"> {{ event.username }}</td>
                         <td class="success">
-                           <INPUT Type="BUTTON" VALUE="Message Me" ONCLICK="window.location.href='http://127.0.0.1:8000/chat/'">
+                           <input class="input-sm form-control btn-teal" type="button" value="Message Me" onclick="window.location.href='http://127.0.0.1:8000/chat/'">
                          </td>
             </tr>
          {% endfor %}

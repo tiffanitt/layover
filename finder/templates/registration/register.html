@@ -1,23 +1,21 @@
 {% extends 'base.html' %}
-{% load crispy_forms_tags %}
 
 {% block content %}
 
-<body class='registerme'>
-<table>
-    <p align="center" style="font-weight: bold;">Hurry and sign up now </p>
-        <label>
-            <div id = 'register'>
-         <form method="post" action=".">
-            {% csrf_token %}
-            {{ form.as_table }}<br>
-            <input id='registersubmit' class='btn btn-green' type="submit" value="Submit">
-         </form>
-            </div>
-        </label>
-</table>
+<div class='registerme'>
+    <div class="col-sm-4 col-sm-offset-4">
 
-</body>
+        <p align="center" style="font-weight: bold;">Hurry and sign up now </p>
+
+        <form method="post" action=".">
+            {% csrf_token %}
+            {{ form }}<br>
+        </form>
+
+        <input class='input-sm form-control btn-teal' type="submit" value="Submit">
+    </div>
+</div>
+
 
 {% endblock %}
 
