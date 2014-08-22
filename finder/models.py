@@ -7,13 +7,14 @@ class Category(models.Model):
     name = models.CharField(max_length=35)
 
     def __unicode__(self):
-        return self.name
+        return u"{}".format(self.name)
 
 class Event(models.Model):
+    # related_name should probably just be "events"
     category = models.ForeignKey(Category, related_name='event_category')
 
     def __unicode__(self):
-        return self.category.name
+        return u"{}".format(self.category.name)
 
 class Member(AbstractUser):
     MALE = 'm'
