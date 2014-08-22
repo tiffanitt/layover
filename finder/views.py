@@ -9,7 +9,7 @@ def chat(request):
 def home(request):
     return render(request, 'index.html')
 
-
+# You should still make these 3 categories the same view!
 def margarita(request):
     people = Member.objects.filter(event__category__name='I want a margarita!')
     return render(request, 'margarita.html', {'people': people})
