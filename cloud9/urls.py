@@ -17,7 +17,7 @@ urlpatterns = patterns('',
     url(r'^login/$', 'django.contrib.auth.views.login', name='login'),
     url(r'^profile/$', 'finder.views.profile', name='profile'),
     url(r'^logout/$', 'django.contrib.auth.views.logout', name='logout'),
-
+    url(r'^chat/$', 'finder.views.chat', name='chat'),
 
 
 #### RESET INFORMATION
