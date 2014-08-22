@@ -1,3 +1,3 @@
-web: gunicorn cloud9.wsgi --log-file
+web: gunicorn cloud9.wsgi --log-file -
 
 
