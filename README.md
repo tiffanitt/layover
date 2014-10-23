@@ -1,4 +1,4 @@
-planer_finder (aka:Layover)
+Layover
 =============
 
 My second and third project helping travelers unite during delayed times!
@@ -32,4 +32,4 @@ for the real time chat functionality between users in the database!
 •	Website is currently mobile friendly
 
 
-You can view the website right <p><a href="http://layover.herokuapp.com/">here</a></p>
+<p>You can view the website right <a href="http://layover.herokuapp.com/">here</a></p>
